@@ -32,11 +32,9 @@ class ImageValidator:
         if width > ImageValidator.MAX_DIMENSIONS[0] or height > ImageValidator.MAX_DIMENSIONS[1]:
             return False, f"Image too large. Maximum dimensions: {ImageValidator.MAX_DIMENSIONS[0]}x{ImageValidator.MAX_DIMENSIONS[1]}"
         
-        # Check channels
-        if len(image.shape) != 1:
-            return False, "Image must be in color (3 channels)"
-        if image.shape[2] != 1:
-            return False, "Image must have exactly 3 channels (BGR)"
+        # Modified to check for single channel
+        if len(image.shape) != 2:
+            return False, "Image must be grayscale (1 channel)"
             
         # Check data type
         if image.dtype != np.uint8:
