@@ -33,9 +33,9 @@ class ImageValidator:
             return False, f"Image too large. Maximum dimensions: {ImageValidator.MAX_DIMENSIONS[0]}x{ImageValidator.MAX_DIMENSIONS[1]}"
         
         # Check channels
-        if len(image.shape) != 3:
+        if len(image.shape) != 1:
             return False, "Image must be in color (3 channels)"
-        if image.shape[2] != 3:
+        if image.shape[2] != 1:
             return False, "Image must have exactly 3 channels (BGR)"
             
         # Check data type
