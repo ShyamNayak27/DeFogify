@@ -115,7 +115,7 @@ PixelDehazer = gr.Interface(
         gr.Image(type="numpy", label="Dehazed Image")
     ],
     title="Image Dehazing Tool",
-    description="Upload a hazy or foggy image to remove atmospheric haze. Supported formats: JPEG, PNG, BMP, TIFF. Image size must be between 100x100 and 4096x4096 pixels."
+    description="Upload a hazy image to remove atmospheric haze. Supported formats: JPEG, PNG, BMP, TIFF. Image size must be between 100x100 and 4096x4096 pixels."
 )
 
 PixelDehazer.launch()
